@@ -4,7 +4,7 @@ from flask import render_template
 from flask_talisman import Talisman
 from werkzeug.utils import secure_filename
 
-from AI import AI_process
+from backend.AI import AI_process
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
