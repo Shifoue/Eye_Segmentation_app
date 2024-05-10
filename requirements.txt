@@ -1,4 +1,4 @@
-pip3 install -U Flask
+pip3 install Flask
 pip3 install flask-Talisman
 pip3 install utils
 pip3 install torchmetrics
