@@ -4,6 +4,9 @@ WORKDIR /service/backend
 
 RUN pip install -r requirements.txt
 
-CMD ["python flask –app ressources/app.py run"]
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_APP=ressources/app.py
+
+CMD ["flask", "run", "--debug"]
 
 EXPOSE 5000
