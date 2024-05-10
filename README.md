@@ -1,5 +1,7 @@
 # Eye_Segmentation_app
 
+## Install Docker
+
 ```
 # Add Docker's official GPG key:
 sudo apt-get update
