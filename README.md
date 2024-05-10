@@ -25,3 +25,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ```
 sudo docker run hello-world
 ```
+
+```
+sudo chmod 666 /var/run/docker.sock
+```
