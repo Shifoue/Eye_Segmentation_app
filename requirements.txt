@@ -1,5 +1,5 @@
-pip install -U Flask
-pip install flask-Talisman
-pip install utils
-pip install torchmetrics
-pip install numpy
+pip3 install -U Flask
+pip3 install flask-Talisman
+pip3 install utils
+pip3 install torchmetrics
+pip3 install numpy
