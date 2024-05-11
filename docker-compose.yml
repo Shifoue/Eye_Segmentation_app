@@ -20,6 +20,6 @@ services:
       context: services
       dockerfile: Dockerfile
     volumes:
-      - "/backend/"
+      - "/services/backend/"
     ports:
     - "127.0.0.1:5000:5000"
