@@ -12,7 +12,8 @@ RUN mkdir /services/backend/network/weights
 RUN mv checkpoint_85_ADAMW.pth /services/backend/network/weights/
 
 RUN apt install python3-pip -y
-RUN pip install -U pip
+# RUN pip install -U pip
+RUN python -m pip install --upgrade pip
 
 RUN pip install -r requirements.txt
 
