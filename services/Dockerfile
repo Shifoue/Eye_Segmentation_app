@@ -13,7 +13,7 @@ RUN pip install -U pip
 
 COPY . .
 
-RUN mv checkpoint_85_ADAMW.pth /backend/network/weights/checkpoint_85_ADAMW.pth
+RUN cp checkpoint_85_ADAMW.pth /backend/network/weights/
 
 RUN pip install -r requirements.txt
 
