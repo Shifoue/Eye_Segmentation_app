@@ -2,23 +2,23 @@ FROM nvidia/cuda:12.1.1-base-ubuntu22.04
 
 COPY . .
 RUN bash ls
-WORKDIR /services
+# WORKDIR /services
 
-RUN apt-get update
-RUN apt-get install python3.10 -y
-RUN apt install wget -y
+# RUN apt-get update
+# RUN apt-get install python3.10 -y
+# RUN apt install wget -y
 
-RUN wget https://github.com/Shifoue/Eye_Segmentation_app/releases/download/Base_version/checkpoint_85_ADAMW.pth
-RUN mv checkpoint_85_ADAMW.pth /services/backend/network/weights/
+# RUN wget https://github.com/Shifoue/Eye_Segmentation_app/releases/download/Base_version/checkpoint_85_ADAMW.pth
+# RUN mv checkpoint_85_ADAMW.pth /services/backend/network/weights/
 
-RUN apt install python3-pip -y
-RUN pip install -U pip
+# RUN apt install python3-pip -y
+# RUN pip install -U pip
 
-RUN pip install -r requirements.txt
+# RUN pip install -r requirements.txt
 
-ENV FLASK_RUN_HOST=0.0.0.0
-ENV FLASK_APP=app.py
+# ENV FLASK_RUN_HOST=0.0.0.0
+# ENV FLASK_APP=app.py
 
-CMD ["flask", "run", "--debug"]
+# CMD ["flask", "run", "--debug"]
 
-EXPOSE 5000
+# EXPOSE 5000
