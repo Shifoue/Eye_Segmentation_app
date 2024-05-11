@@ -3,5 +3,5 @@ Werkzeug==2.0.2
 flask-talisman==1.1.0
 utils==1.0.2
 torchmetrics==1.4.0
-numpy
-pillow
+numpy==1.26.4
+pillow==10.3.0
