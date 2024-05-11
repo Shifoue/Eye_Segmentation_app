@@ -4,3 +4,4 @@ flask-talisman==1.1.0
 utils==1.0.2
 torchmetrics==1.4.0
 numpy
+pillow
