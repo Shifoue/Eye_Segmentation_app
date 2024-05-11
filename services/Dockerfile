@@ -1,5 +1,6 @@
 FROM nvidia/cuda:12.1.1-base-ubuntu22.04
 
+COPY . .
 WORKDIR /services
 
 RUN apt-get update
@@ -11,8 +12,6 @@ RUN wget https://github.com/Shifoue/Eye_Segmentation_app/releases/download/Base_
 
 RUN apt install python3-pip -y
 RUN pip install -U pip
-
-COPY . .
 
 RUN pip install -r requirements.txt
 
