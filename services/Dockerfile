@@ -1,6 +1,7 @@
 FROM nvidia/cuda:12.1.1-base-ubuntu22.04
 
 COPY . .
+RUN bash ls
 WORKDIR /services
 
 RUN apt-get update
