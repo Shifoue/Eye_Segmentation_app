@@ -16,7 +16,7 @@ RUN pip install -U pip
 # RUN python -m pip install --upgrade pip
 RUN apt install zlib1g-dev libjpeg-dev libpng-dev -y
 
-RUN pip install torch==1.3.1+cpu torchvision==0.4.2+cpu -f https://download.pytorch.org/whl/torch_stable.html
+# RUN pip3 install torch==1.3.1+cpu torchvision==0.4.2+cpu -f https://download.pytorch.org/whl/torch_stable.html
 
 RUN pip install -r requirements.txt
 
