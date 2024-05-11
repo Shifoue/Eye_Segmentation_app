@@ -17,7 +17,7 @@ services:
   application:
     #restart: always
     build:
-      context: ./services
+      context: .
       dockerfile: Dockerfile
     volumes:
       - "/services/"
