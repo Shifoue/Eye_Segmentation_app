@@ -4,7 +4,7 @@ import torchvision
 
 from torch.utils.data import DataLoader
 
-from network.processing.dataset import FaceDataset
+from backend.network.processing.dataset import FaceDataset
 
 SAVE_DIR = "Saved_Images"
 

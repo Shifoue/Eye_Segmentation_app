@@ -1,6 +1,6 @@
 import torch
 
-from model.Unet import myUNET
+from backend.network.model.Unet import myUNET
 
 WEIGHTS_PATH = "weights/checkpoint_85_ADAMW.pth"
 

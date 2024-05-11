@@ -1,7 +1,7 @@
 from PIL import Image
 
-from network.get_network import create_network
-from network.processing.transforms import get_transforms
+from backend.network.get_network import create_network
+from backend.network.processing.transforms import get_transforms
 
 WEIGHTS_PATH = "network/weights/checkpoint_85_ADAMW.pth"
 
