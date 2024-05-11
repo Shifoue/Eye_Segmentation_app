@@ -9,7 +9,7 @@ RUN apt-get install python3.10 -y
 RUN apt install python3-pip -y
 RUN pip install -U pip
 
-RUN pip install -r requirements.txt
+RUN pip install -r services/requirements.txt
 
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_APP=app.py
