@@ -15,7 +15,7 @@ services:
   #     - server-certificate
 
   application:
-    restart: always
+    #restart: always
     build:
       context: services
       dockerfile: Dockerfile
