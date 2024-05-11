@@ -5,7 +5,7 @@ WORKDIR /services
 RUN apt-get update
 RUN apt-get install python3.10 -y
 
-RUN python -m ensurepip --upgrade -y
+RUN apt install python3-pip -y
 
 RUN pip install -r requirements.txt
 
