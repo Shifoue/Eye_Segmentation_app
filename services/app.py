@@ -8,6 +8,8 @@ from backend.AI import AI_process
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
+HOST="0.0.0.0"
+
 app = Flask(__name__)
 talisman = Talisman(app)
 
@@ -64,6 +66,6 @@ def upload_file():
     return render_template("templates/upload.html")
  
 if __name__ == '__main__':
-    app.run()
+    app.run(HOST, port=5000)
 
     #AI = AI_process()
