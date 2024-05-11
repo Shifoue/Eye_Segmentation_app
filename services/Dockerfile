@@ -1,7 +1,7 @@
 FROM nvidia/cuda:12.1.1-base-ubuntu22.04
 
 WORKDIR /services
-COPY requirements.txt .
+COPY . .
 
 RUN apt-get update
 RUN apt-get install python3.10 -y
