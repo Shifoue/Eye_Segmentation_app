@@ -6,8 +6,8 @@ RUN apt-get update
 RUN apt-get install python3.10 -y
 RUN apt install wget -y
 
-RUN wget https://github.com/Shifoue/Eye_Segmentation_app/releases/download/Base_version/checkpoint_85_ADAMW.pth
-RUN cp services.checkpoint_85_ADAMW.pth /backend/network/weights/
+RUN wget https://github.com/Shifoue/Eye_Segmentation_app/releases/download/Base_version/checkpoint_85_ADAMW.pth \
+&& cp checkpoint_85_ADAMW.pth /backend/network/weights/
 
 RUN apt install python3-pip -y
 RUN pip install -U pip
