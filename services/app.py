@@ -67,6 +67,6 @@ def upload_file():
     return render_template("upload.html")
  
 if __name__ == '__main__':
-    app.run(HOST, port=5000,ssl_context="adhoc")
+    app.run(HOST, port=5000, ssl_context="adhoc")
 
     #AI = AI_process()
