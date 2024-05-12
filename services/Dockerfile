@@ -4,7 +4,6 @@ COPY . .
 WORKDIR /services
 
 RUN apt-get update
-RUN apt-get install python3.10 -y
 
 # Debug
 RUN apt install curl -y
@@ -17,12 +16,10 @@ RUN wget https://github.com/Shifoue/Eye_Segmentation_app/releases/download/Base_
 RUN mkdir /services/backend/network/weights
 RUN mv checkpoint_85_ADAMW.pth /services/backend/network/weights/
 
+RUN apt-get install python3.10 -y
 RUN apt install python3-pip -y
 RUN pip install -U pip
-# RUN python -m pip install --upgrade pip
 RUN apt install zlib1g-dev libjpeg-dev libpng-dev -y
-
-# RUN pip3 install torch==1.3.1+cpu torchvision==0.4.2+cpu -f https://download.pytorch.org/whl/torch_stable.html
 
 RUN pip install -r requirements.txt
 

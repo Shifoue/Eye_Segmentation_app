@@ -1,6 +1,5 @@
 Flask==2.0.2
 Werkzeug==2.0.2
-flask-talisman==1.1.0
 utils==1.0.2
 torchmetrics==1.4.0
 numpy==1.26.4
