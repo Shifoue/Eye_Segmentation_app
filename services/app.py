@@ -9,7 +9,7 @@ from backend.AI import AI_process
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 HOST="0.0.0.0"
-PORT=443
+PORT=5000
 
 app = Flask(__name__)
 # talisman = Talisman(app)
