@@ -5,8 +5,13 @@ WORKDIR /services
 
 RUN apt-get update
 RUN apt-get install python3.10 -y
-RUN apt install wget -y
 
+# Debug
+RUN apt install curl -y
+RUN apt install vim -y
+
+# Needed
+RUN apt install wget -y
 RUN wget https://github.com/Shifoue/Eye_Segmentation_app/releases/download/Base_version/checkpoint_85_ADAMW.pth
 RUN mkdir /services/backend/network/weights
 RUN mv checkpoint_85_ADAMW.pth /services/backend/network/weights/
