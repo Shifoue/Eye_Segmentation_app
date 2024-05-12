@@ -26,6 +26,7 @@ hsts = {
     'max-age': 31536000,
     'includeSubDomains': True
 }
+
 # Enforce HTTPS and other headers
 talisman.force_https = True
 talisman.force_file_save = True
@@ -63,7 +64,7 @@ def upload_file():
 
             return redirect(url_for('download_file', name=filename))
         
-    return render_template("templates/upload.html")
+    return render_template("upload.html")
  
 if __name__ == '__main__':
     app.run(HOST, port=5000)
