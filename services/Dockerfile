@@ -26,6 +26,6 @@ RUN pip install -r requirements.txt
 # ENV FLASK_RUN_HOST=0.0.0.0
 # ENV FLASK_APP=app.py
 
-EXPOSE 5000
+EXPOSE 443
 
 CMD ["flask", "run", "--host=0.0.0.0", "--cert=adhoc"]
