@@ -23,9 +23,6 @@ RUN apt install zlib1g-dev libjpeg-dev libpng-dev -y
 
 RUN pip install -r requirements.txt
 
-# ENV FLASK_RUN_HOST=0.0.0.0
-# ENV FLASK_APP=app.py
-
 EXPOSE 5000
 
 CMD ["flask", "run", "--host=0.0.0.0", "--cert=adhoc"]
