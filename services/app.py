@@ -32,7 +32,6 @@ def upload_file():
         
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             predicted_mask = AI.process(file)
 
             return redirect(url_for('download_file', name=filename))
