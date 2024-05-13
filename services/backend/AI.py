@@ -11,11 +11,9 @@ class AI_process():
     def __init__(self):
         self.model = create_network(WEIGHTS_PATH)
 
-    def process(self, image_file):
-        origin_image = Image.open(image_file)
-
+    def process(self, image):
         _, val_transform = get_transforms()
-        image = val_transform(origin_image)
+        image = val_transform(image)
 
         image = torch.unsqueeze(image, 0)
 
