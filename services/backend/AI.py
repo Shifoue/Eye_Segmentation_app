@@ -1,4 +1,5 @@
 from PIL import Image
+import torch
 
 from backend.network.get_network import create_network
 from backend.network.processing.transforms import get_transforms
@@ -14,6 +15,8 @@ class AI_process():
 
         _, val_transform = get_transforms()
         image = val_transform(origin_image)
+
+        image = torch.unsqueeze(image, 0)
 
         predicted_mask = self.model(image)
 
