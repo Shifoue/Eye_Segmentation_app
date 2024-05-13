@@ -1,9 +1,10 @@
 import os
+import io
+from PIL import Image
 from flask import Flask, flash, request, redirect, url_for
 from flask import render_template
 from werkzeug.utils import secure_filename
 from base64 import b64encode
-import io
 
 from backend.AI import AI_process
 
@@ -43,10 +44,11 @@ def upload_file():
         
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
+            origin_image = Image.open(file)
 
-            predicted_mask = AI.process(file)
+            predicted_mask = AI.process(origin_image)
 
-            origin_img_url = create_img_url(file)
+            origin_img_url = create_img_url(origin_image)
             predicted_mask_img_url = create_img_url(predicted_mask)
 
             #return redirect(url_for('download_file', name=filename))

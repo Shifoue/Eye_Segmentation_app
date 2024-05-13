@@ -1,5 +1,6 @@
 from PIL import Image
 import torch
+import torchvision.transforms as transforms
 
 from backend.network.get_network import create_network
 from backend.network.processing.transforms import get_transforms
@@ -20,4 +21,4 @@ class AI_process():
 
         predicted_mask = self.model(image)
 
-        return predicted_mask
+        return transforms.ToPILImage()(predicted_mask)
