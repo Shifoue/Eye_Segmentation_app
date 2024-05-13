@@ -52,7 +52,7 @@ def upload_file():
         
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            origin_image = Image.open(file)
+            origin_image = Image.open(file).convert('RGB')
 
             predicted_mask = AI.process(origin_image)
 
