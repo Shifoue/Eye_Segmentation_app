@@ -28,6 +28,7 @@ def create_img_url(image):
     buffered = io.BytesIO()
     image.save(buffered, format="JPEG")
     img_str = base64.b64encode(buffered.getvalue())
+    img_str = img_str.decode('utf-8')
 
     return img_str
 
@@ -55,11 +56,11 @@ def upload_file():
 
             predicted_mask = AI.process(origin_image)
 
-            origin_img_url = create_img_url(origin_image)
-            predicted_mask_img_url = create_img_url(predicted_mask)
+            origin_img_str = create_img_url(origin_image)
+            predicted_mask_img_str = create_img_url(predicted_mask)
 
             #return redirect(url_for('download_file', name=filename))
-            return render_template('image.html', image_data=predicted_mask_img_url.decode('utf-8'))
+            return render_template('image.html', image_data=predicted_mask_img_str)
         
     return render_template("upload.html")
  
