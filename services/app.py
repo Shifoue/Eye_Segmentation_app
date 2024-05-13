@@ -10,6 +10,8 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 HOST="0.0.0.0"
 PORT=5000
 
+AI = AI_process()
+
 app = Flask(__name__)
 
 def allowed_file(filename):
@@ -39,5 +41,4 @@ def upload_file():
     return render_template("upload.html")
  
 if __name__ == '__main__':
-    AI = AI_process()
     app.run(HOST, port=PORT, ssl_context="adhoc")
