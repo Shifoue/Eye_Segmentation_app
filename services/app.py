@@ -2,6 +2,8 @@ import os
 from flask import Flask, flash, request, redirect, url_for
 from flask import render_template
 from werkzeug.utils import secure_filename
+from base64 import b64encode
+import io
 
 from backend.AI import AI_process
 
@@ -13,6 +15,13 @@ PORT=5000
 AI = AI_process()
 
 app = Flask(__name__)
+
+def create_img_url(image):
+    image_io = io.BytesIO()
+    image.save(image_io, 'PNG')
+    dataurl = 'data:image/png;base64,' + b64encode(image_io.getvalue()).decode('ascii')
+
+    return dataurl
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -34,9 +43,14 @@ def upload_file():
         
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
+
             predicted_mask = AI.process(file)
 
-            return redirect(url_for('download_file', name=filename))
+            origin_img_url = create_img_url(file)
+            predicted_mask_img_url = create_img_url(predicted_mask)
+
+            #return redirect(url_for('download_file', name=filename))
+            return render_template('image.html', image_data=origin_img_url)
         
     return render_template("upload.html")
  
