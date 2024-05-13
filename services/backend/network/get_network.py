@@ -9,7 +9,7 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 def create_network(weights=WEIGHTS_PATH, device=DEVICE):
     UNET = myUNET(in_channels=3, out_channels=1).to(device)
 
-    checkpoint = torch.load(weights)
+    checkpoint = torch.load(weights,  map_location=torch.device(device))
 
     UNET.load_state_dict(checkpoint["state_dict"])
 
