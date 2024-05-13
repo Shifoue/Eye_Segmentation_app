@@ -17,6 +17,8 @@ class AI_process():
 
         image = torch.unsqueeze(image, 0)
 
-        predicted_mask = self.model(image)
+        predicted_mask = torch.sigmoid(self.model(image))
+
+        predicted_mask = (predicted_mask > 0.5).float()
 
         return transforms.ToPILImage()(predicted_mask[0])
