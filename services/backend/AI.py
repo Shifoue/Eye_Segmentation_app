@@ -19,4 +19,4 @@ class AI_process():
 
         predicted_mask = self.model(image)
 
-        return transforms.ToPILImage()(predicted_mask)
+        return transforms.ToPILImage()(predicted_mask[0])

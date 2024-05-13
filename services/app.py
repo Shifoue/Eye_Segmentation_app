@@ -49,7 +49,7 @@ def upload_file():
             predicted_mask = AI.process(origin_image)
 
             origin_img_url = create_img_url(origin_image)
-            predicted_mask_img_url = create_img_url(predicted_mask[0])
+            predicted_mask_img_url = create_img_url(predicted_mask)
 
             #return redirect(url_for('download_file', name=filename))
             return render_template('image.html', image_data=origin_img_url)
