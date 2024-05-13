@@ -32,8 +32,8 @@ def upload_file():
         
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            #file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            #predicted_mask = AI.process(file)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            predicted_mask = AI.process(file)
 
             return redirect(url_for('download_file', name=filename))
         
@@ -42,4 +42,4 @@ def upload_file():
 if __name__ == '__main__':
     app.run(HOST, port=PORT, ssl_context="adhoc")
 
-    #AI = AI_process()
+    AI = AI_process()
