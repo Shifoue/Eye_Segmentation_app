@@ -59,7 +59,7 @@ def upload_file():
             predicted_mask_img_jpg = create_img_url(predicted_mask)
 
             #return redirect(url_for('download_file', name=filename))
-            return render_template('image.html', image_data=predicted_mask_img_jpg)
+            return render_template('image.html', image_data=origin_img_jpg)
         
     return render_template("upload.html")
  
