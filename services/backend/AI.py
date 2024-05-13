@@ -3,7 +3,7 @@ from PIL import Image
 from backend.network.get_network import create_network
 from backend.network.processing.transforms import get_transforms
 
-WEIGHTS_PATH = "network/weights/checkpoint_85_ADAMW.pth"
+WEIGHTS_PATH = "backend/network/weights/checkpoint_85_ADAMW.pth"
 
 class AI_process():
     def __init__(self):
