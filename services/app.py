@@ -6,7 +6,6 @@ from base64 import b64encode
 from flask import Flask, flash, request, redirect, url_for
 from flask import render_template
 from werkzeug.utils import secure_filename
-import matplotlib.pyplot as plt
 
 from backend.AI import AI_process
 
@@ -19,18 +18,18 @@ AI = AI_process()
 
 app = Flask(__name__)
 
-def create_img_url(image):
+def create_img_url(image, extension="JPEG"):
     # image_io = io.BytesIO()
     # image.save(image_io, 'PNG')
     # dataurl = 'data:image/png;base64,' + b64encode(image_io.getvalue()).decode('ascii')
     # image_io.seek(0)
 
     buffered = io.BytesIO()
-    image.save(buffered, format="JPEG")
+    image.save(buffered, format=extension)
     img_str = base64.b64encode(buffered.getvalue())
-    img_str = img_str.decode('utf-8')
+    img_jpg = img_str.decode('utf-8')
 
-    return img_str
+    return img_jpg
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -56,11 +55,11 @@ def upload_file():
 
             predicted_mask = AI.process(origin_image)
 
-            origin_img_str = create_img_url(origin_image)
-            predicted_mask_img_str = create_img_url(predicted_mask)
+            origin_img_jpg = create_img_url(origin_image)
+            predicted_mask_img_jpg = create_img_url(predicted_mask)
 
             #return redirect(url_for('download_file', name=filename))
-            return render_template('image.html', image_data=predicted_mask_img_str)
+            return render_template('image.html', image_data=predicted_mask_img_jpg)
         
     return render_template("upload.html")
  
