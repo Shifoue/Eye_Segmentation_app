@@ -30,4 +30,4 @@ sudo docker run hello-world
 sudo chmod 666 /var/run/docker.sock
 ```
 
-The model works well on identity photos but doesn't generalize to full picture
+The model works well on identity photos but doesn't generalize well to other face photos type.
