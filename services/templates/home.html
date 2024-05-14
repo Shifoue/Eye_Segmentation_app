@@ -6,7 +6,17 @@
 
     <body>
         <main>
-            <h1>Home</h1>
+            <h1>Welcome to my Eye Segmentation Web app</h1>
+            <p>
+                You can naviguate the project through the different categories.
+                You can find a quick Demonstration and Technical Explanations following :
+            </p>
+            <nav class="menu">
+                <ul>
+                  <li><a  href="{{ url_for('demonstration')}}" class="right">Demonstation</a></li>
+                  <li><a  href="{{ url_for('technical_explanation')}}" class="right">Technical Explanations</a></li>
+                </ul>
+            </nav>
         </main>
     </body>
 
@@ -18,10 +28,4 @@
         </section>
     </nav> -->
 
-    <nav class="menu">
-        <ul>
-          <li><a  href="{{ url_for('demonstration')}}" class="right">Demonstation</a></li>
-          <li><a  href="{{ url_for('technical_explanation')}}" class="right">Technical Explanations</a></li>
-        </ul>
-    </nav>
 </html>
