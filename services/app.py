@@ -72,7 +72,7 @@ def demonstration():
             predicted_mask_img_jpg = create_img_url(predicted_mask)
 
             #return render_template('show_image.html', image_data=predicted_mask_img_jpg)
-            return render_template('demonstration.html', image_data=predicted_mask_img_jpg)
+            return render_template('demonstration.html', mask_image_data=predicted_mask_img_jpg, origin_image_data=origin_img_jpg)
         
     return render_template("demonstration.html")
  
