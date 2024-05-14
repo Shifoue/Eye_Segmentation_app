@@ -38,7 +38,7 @@ def allowed_file(filename):
 
 @app.route('/')
 def index():
-    return redirect(url_for('home.html')) #render_template('home.html')
+    return redirect(url_for('home')) #render_template('home.html')
 
 @app.route('/home')
 def home():
