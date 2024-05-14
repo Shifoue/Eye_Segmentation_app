@@ -74,7 +74,7 @@ def demonstration():
             #return redirect(url_for('download_file', name=filename))
             return render_template('show_image.html', image_data=predicted_mask_img_jpg)
         
-    return render_template("upload.html")
+    return render_template("demonstration.html")
  
 if __name__ == '__main__':
     app.run(HOST, port=PORT, ssl_context="adhoc")
