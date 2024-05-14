@@ -1,7 +1,17 @@
-<!doctype html>
-<title>Upload new File</title>
-<h1>Upload new File</h1>
-<form method=post enctype=multipart/form-data>
-    <input type=file name=file>
-    <input type=submit value=Upload>
-</form>
+<!DOCTYPE HTML>
+<html lang="en">
+    <title>Upload new File</title>
+        <h1>Upload new File</h1>
+        <form method=post enctype=multipart/form-data>
+            <input type=file name=file>
+            <input type=submit value=Upload>
+        </form>
+
+        <% if (true) { %>
+            <body>
+                <center>
+                  <img src="data:image/jpg;base64,{{ image_data }}">
+                </center>
+            </body>
+        <% } %>
+</html>

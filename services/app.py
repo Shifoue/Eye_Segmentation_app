@@ -71,8 +71,8 @@ def demonstration():
             origin_img_jpg = create_img_url(origin_image)
             predicted_mask_img_jpg = create_img_url(predicted_mask)
 
-            #return redirect(url_for('download_file', name=filename))
-            return render_template('show_image.html', image_data=predicted_mask_img_jpg)
+            #return render_template('show_image.html', image_data=predicted_mask_img_jpg)
+            return render_template('demonstration.html', image_data=predicted_mask_img_jpg)
         
     return render_template("demonstration.html")
  
