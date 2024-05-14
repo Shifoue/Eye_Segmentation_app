@@ -35,8 +35,20 @@ def create_img_url(image, extension="JPEG"):
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/')
+def index():
+    return redirect(url_for('home.html')) #render_template('home.html')
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
+@app.route('/technical_explanation')
+def technical_explanation():
+    return render_template('technical_explanation.html')
  
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/demonstration', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
