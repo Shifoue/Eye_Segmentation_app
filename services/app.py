@@ -49,7 +49,7 @@ def technical_explanation():
     return render_template('technical_explanation.html')
  
 @app.route('/demonstration', methods=['GET', 'POST'])
-def upload_file():
+def demonstration():
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
@@ -72,7 +72,7 @@ def upload_file():
             predicted_mask_img_jpg = create_img_url(predicted_mask)
 
             #return redirect(url_for('download_file', name=filename))
-            return render_template('image.html', image_data=predicted_mask_img_jpg)
+            return render_template('show_image.html', image_data=predicted_mask_img_jpg)
         
     return render_template("upload.html")
  
