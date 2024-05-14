@@ -10,7 +10,7 @@
         <% if (true) { %>
             <body>
                 <center>
-                  <img src="data:image/jpg;base64,{{ image_data }}">
+                  <img src="data:image/jpg;base64,{{ image_data }}" onerror="this.style.display='none'">
                 </center>
             </body>
         <% } %>
