@@ -11,9 +11,9 @@ class AI_process():
     def __init__(self):
         self.model = create_network(WEIGHTS_PATH)
 
-    def segmented_image(self, image, mask, alpha=0.8):
+    def segmented_image(self, image, mask, alpha=0.75):
         segmentation = alpha * image * mask
-        segmentation = transforms.functional.adjust_hue(segmentation, 0.4)
+        segmentation = transforms.functional.adjust_hue(segmentation, 0.35)
 
         masked_image = segmentation + (1 - alpha) * (1 - mask) * image
 
