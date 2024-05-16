@@ -1,16 +1,20 @@
 <!DOCTYPE HTML>
 <html lang="en">
     <title>Identity picture segmentation</title>
-        <h1>Identity picture segmentation</h1>
+        <h1>Face segmentation</h1>
         <p>
-            The model has been trained on the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces Kaggle Dataset</a>. It achieved 85% <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a> on the test set.
+            The model has been trained on approximated masks from the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces Kaggle Dataset</a>. It achieved 85% <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a> on the test set.<br />
+            To create the masks, I used <a href="https://pypi.org/project/mediapipe/">Mediapipe</a> to approximate the eye positions on the faces. Even though the results are great, we could be more precise with the segmentation if we used a more precisely annotated dataset.<br />
+            Currently, the model is limited to face images only and doesn't generalize well to full-body pictures. This could be solved by adding more picture types to the dataset, such as full-body pictures.<br />
+            If you wish to test the model, feel free to upload a face picture. Rest assured that I do not save uploaded pictures to the server.<br />
         </p>
-        <p>
+        <!-- <p>
             Even tho the result is great on CelebFaces the model is limited to face images and doesn't generalize to full body pictures.
         </p>
         <p>
             If you wish to test the model feel free to upload a picture close to an identity picture. Rest assured that i do not save uploaded picture to the server.
-        </p>
+        </p> -->
+        <h2>Upload a Face picture</h2>
         <form method=post enctype=multipart/form-data>
             <input type=file name=file>
             <input type=submit value=Upload>
@@ -19,7 +23,8 @@
         <body>
             <center>
                 <img src="data:image/jpg;base64,{{ origin_image_data }}" onerror="this.style.display='none'">
-                <img src="data:image/jpg;base64,{{ mask_image_data }}" onerror="this.style.display='none'">
+                <img src="data:image/jpg;base64,{{ mask_data }}" onerror="this.style.display='none'">
+                <img src="data:image/jpg;base64,{{ masked_image_data }}" onerror="this.style.display='none'">
             </center>
         </body>
 </html>

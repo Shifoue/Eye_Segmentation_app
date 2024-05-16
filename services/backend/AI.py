@@ -11,6 +11,14 @@ class AI_process():
     def __init__(self):
         self.model = create_network(WEIGHTS_PATH)
 
+    def segmented_image(self, image, mask, alpha=0.8):
+        segmentation = alpha * image * mask
+        segmentation = transforms.functional.adjust_hue(segmentation, 0.4)
+
+        masked_image = segmentation + (1 - alpha) * (1 - mask) * image
+
+        return transforms.ToPILImage()(masked_image)
+
     def process(self, image):
         _, val_transform = get_transforms()
         image = val_transform(image)
@@ -21,4 +29,6 @@ class AI_process():
 
         predicted_mask = (predicted_mask > 0.5).float()
 
-        return transforms.ToPILImage()(predicted_mask[0])
+        masked_image = self.segmented_image(image, predicted_mask)
+
+        return transforms.ToPILImage()(predicted_mask[0]), masked_image

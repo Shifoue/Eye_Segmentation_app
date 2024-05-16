@@ -18,12 +18,7 @@ AI = AI_process()
 
 app = Flask(__name__)
 
-def create_img_url(image, extension="JPEG"):
-    # image_io = io.BytesIO()
-    # image.save(image_io, 'PNG')
-    # dataurl = 'data:image/png;base64,' + b64encode(image_io.getvalue()).decode('ascii')
-    # image_io.seek(0)
-
+def encode_base64(image, extension="JPEG"):
     buffered = io.BytesIO()
     image.save(buffered, format=extension)
     buffered.seek(0)
@@ -31,6 +26,9 @@ def create_img_url(image, extension="JPEG"):
     img_jpg = img_str.decode('utf-8')
 
     return img_jpg
+
+def apply_mask(image, mask, alpha = 0.5):
+    masked_im = image@mask + alpha * (1 - mask)@image
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -66,12 +64,13 @@ def demonstration():
             filename = secure_filename(file.filename)
             origin_image = Image.open(file).convert('RGB')
 
-            predicted_mask = AI.process(origin_image)
+            predicted_mask, masked_image = AI.process(origin_image)
 
-            origin_img_jpg = create_img_url(origin_image)
-            predicted_mask_img_jpg = create_img_url(predicted_mask)
+            origin_img_base64 = encode_base64(origin_image)
+            predicted_mask_img_base64 = encode_base64(predicted_mask)
+            masked_image_base64 = encode_base64(masked_image)
 
-            return render_template('demonstration.html', origin_image_data=origin_img_jpg, mask_image_data=predicted_mask_img_jpg)
+            return render_template('demonstration.html', origin_image_data=origin_img_base64, mask_data=predicted_mask_img_base64, masked_image_data=masked_image_base64)
         
     return render_template("demonstration.html")
  
