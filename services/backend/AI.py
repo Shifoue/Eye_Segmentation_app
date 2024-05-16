@@ -17,7 +17,7 @@ class AI_process():
 
         masked_image = segmentation + (1 - alpha) * (1 - mask) * image
 
-        return transforms.ToPILImage()(masked_image)
+        return transforms.ToPILImage()(masked_image[0])
 
     def process(self, image):
         _, val_transform = get_transforms()

@@ -18,7 +18,7 @@ AI = AI_process()
 
 app = Flask(__name__)
 
-def encode_base64(image, extension="JPEG"):
+def base64_image_encoder(image, extension="JPEG"):
     buffered = io.BytesIO()
     image.save(buffered, format=extension)
     buffered.seek(0)
@@ -66,9 +66,9 @@ def demonstration():
 
             predicted_mask, masked_image = AI.process(origin_image)
 
-            origin_img_base64 = encode_base64(origin_image)
-            predicted_mask_img_base64 = encode_base64(predicted_mask)
-            masked_image_base64 = encode_base64(masked_image)
+            origin_img_base64 = base64_image_encoder(origin_image)
+            predicted_mask_img_base64 = base64_image_encoder(predicted_mask)
+            masked_image_base64 = base64_image_encoder(masked_image)
 
             return render_template('demonstration.html', origin_image_data=origin_img_base64, mask_data=predicted_mask_img_base64, masked_image_data=masked_image_base64)
         
