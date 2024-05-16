@@ -16,24 +16,23 @@
             This demonstration aims to showcase the results of the technical choices I made on the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces Kaggle Dataset</a> and the generalization capabilities of the methods used.<br />
             For example the <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a> loss is a great solution against bad learning strategies, enforcing a focus on the segmented part instead of falling into a white pixel only strategy.<br />
             This loss could be applied to other higher quality datasets allowing the model to achieve even better results on those datasets.<br />
+            <br />
         </p>
-        <center>
-            <h2>Upload a Face picture</h2>
-            <p>
-                If you wish to test the model, feel free to upload a picture zoomed on the face, otherwise the model won't be able to predict the position of the eyes.<br />
-                Rest assured, I do not save any uploaded picture to the server. I use a base64 manipulation to display the image without saving it.
-            </p>
-            <form method=post enctype=multipart/form-data>
-                <input type=file name=file>
-                <input type=submit value=Upload>
-            </form>
+        <h2>Upload a Face picture</h2>
+        <p>
+            If you wish to test the model, feel free to upload a picture zoomed on the face, otherwise the model won't be able to predict the position of the eyes.<br />
+            Rest assured, I do not save any uploaded picture to the server. I use a base64 manipulation to display the image without saving it.
+        </p>
+        <form method=post enctype=multipart/form-data>
+            <input type=file name=file>
+            <input type=submit value=Upload>
+        </form>
 
-            <body>
-                <center>
-                    <img src="data:image/jpg;base64,{{ origin_image_data }}" onerror="this.style.display='none'">
-                    <img src="data:image/jpg;base64,{{ mask_data }}" onerror="this.style.display='none'">
-                    <img src="data:image/jpg;base64,{{ masked_image_data }}" onerror="this.style.display='none'">
-                </center>
-            </body>
-        </center>
+        <body>
+            <center>
+                <img src="data:image/jpg;base64,{{ origin_image_data }}" onerror="this.style.display='none'">
+                <img src="data:image/jpg;base64,{{ mask_data }}" onerror="this.style.display='none'">
+                <img src="data:image/jpg;base64,{{ masked_image_data }}" onerror="this.style.display='none'">
+            </center>
+        </body>
 </html>
