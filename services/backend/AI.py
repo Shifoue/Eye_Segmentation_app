@@ -30,4 +30,4 @@ class AI_process():
 
         masked_image = self.segmented_image(image, predicted_mask)
 
-        return image, transforms.ToPILImage()(predicted_mask[0]), masked_image
+        return transforms.ToPILImage()(image[0]), transforms.ToPILImage()(predicted_mask[0]), masked_image
