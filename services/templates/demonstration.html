@@ -1,7 +1,16 @@
 <!DOCTYPE HTML>
 <html lang="en">
-    <title>Upload new File</title>
-        <h1>Upload new File</h1>
+    <title>Identity picture segmentation</title>
+        <h1>Identity picture segmentation</h1>
+        <p>
+            The model has been trained on the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces Kaggle Dataset</a>. It achieved 85% <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a> on the test set.
+        </p>
+        <p>
+            Even tho the result is great on CelebFaces the model is limited to face images and doesn't generalize to full body pictures.
+        </p>
+        <p>
+            If you wish to test the model feel free to upload a picture close to an identity picture. Rest assured that i do not save uploaded picture to the server.
+        </p>
         <form method=post enctype=multipart/form-data>
             <input type=file name=file>
             <input type=submit value=Upload>
