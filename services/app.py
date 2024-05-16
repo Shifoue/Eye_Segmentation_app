@@ -64,7 +64,7 @@ def demonstration():
             filename = secure_filename(file.filename)
             origin_image = Image.open(file).convert('RGB')
 
-            predicted_mask, masked_image = AI.process(origin_image)
+            origin_image, predicted_mask, masked_image = AI.process(origin_image)
 
             origin_img_base64 = base64_image_encoder(origin_image)
             predicted_mask_img_base64 = base64_image_encoder(predicted_mask)
