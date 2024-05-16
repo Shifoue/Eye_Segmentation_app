@@ -13,7 +13,7 @@ class AI_process():
 
     def segmented_image(self, image, mask, alpha=0.7):
         segmentation = alpha * image * mask
-        segmentation = transforms.functional.adjust_hue(segmentation, 0.35)
+        #segmentation = transforms.functional.adjust_hue(segmentation, 0.35)
         segmentation = transforms.functional.adjust_saturation(segmentation, 15)
 
         masked_image = segmentation + (1 - alpha) * (1 - mask) * image
