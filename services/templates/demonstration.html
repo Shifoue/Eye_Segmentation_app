@@ -8,7 +8,7 @@
         <p>
             This is a proof of concept about Eye Segmentation and the methods used.<br />
             The model was trained on the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces</a> Kaggle's dataset and achieved 89,5% <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a> on the test set.<br />
-            In order to train the model I created a train set of 800 images and a validation set of 200 images. I also created a test set of 1000 images to evaluate the model's performance.<br />
+            In order to train the model, I created a train set of 800 images and a validation set of 200 images. I also created a test set of 1000 images to evaluate the model's performance.<br />
             Then I created the associated masks by using <a href="https://pypi.org/project/mediapipe/">Mediapipe</a>. It allowed me to approximate eye position by applying mesh on the faces. Even though the results are great on the test set, we could achieve better generalization by using another more precisely annotated dataset.<br />
             I recommend using a dataset that includes various types of face pictures, rather than just close-up shots. This could significantly improve the generalization of the model on different face inputs.<br />
             The current model doesn't generalize well because of the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces</a> dataset's limitation.<br />
