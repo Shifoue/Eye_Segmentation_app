@@ -6,9 +6,9 @@
         </center>
         <h2>Context</h2>
         <p>
-            The model has been trained on 800 face images from the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces Kaggle Dataset</a>.<br />
-            It achieved 89,5% <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a> on the test set consisting of 1000 face images extracted from <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces</a>.<br />
-            I used <a href="https://pypi.org/project/mediapipe/">Mediapipe</a> to approximate the eye positions on the faces and I used this information to create the masks that I use as truth. Even though the results are great on the test set, we could gain precision by using a more precisely annotated dataset.<br />
+            The model has been trained on the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces Kaggle Dataset</a> and achieved 89,5% <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a> on the test set.<br />
+            The train set consisted of 800 images, the validation set was 200 images and the test set was 1000 face images.<br />
+            I created masks for all the images using <a href="https://pypi.org/project/mediapipe/">Mediapipe</a>, allowing me to approximate the eye positions on the faces to create the masks that I use as truth. Even though the results are great on the test set, we could gain precision by using a more precisely annotated dataset.<br />
             The current model is limited to face images only and doesn't generalize well to other type of pictures. This could be solved by adding more picture types to the dataset, such as full-body pictures for example.<br />
         </p>
 
