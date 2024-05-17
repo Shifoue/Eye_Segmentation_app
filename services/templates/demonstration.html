@@ -8,7 +8,7 @@
         <p>
             <b class="term">This is a proof of concept about Eye Segmentation and the methods used</b>.<br />
             <br />
-            The model was trained on the <b class="term"><a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces</a></b> Kaggle's dataset and <b class="term">achieved 89,5% <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a></b> on the test set.<br />
+            <b class="term">The model was trained on the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces</a> Kaggle's dataset and achieved 89,5% <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a> on the test set</b>.<br />
             In order to train the model, I created a train set of 800 images and a validation set of 200 images. I also created a test set of 1000 images to evaluate the model's performance.<br />
             Then <b class="term">I created the associated masks using <a href="https://pypi.org/project/mediapipe/">Mediapipe</a></b>. It allowed me to approximate eye position by applying mesh on the faces. Although the test set results are excellent, we could improve generalization by utilizing a dataset with more precise annotations and diversity.<br />
             I recommend using a dataset that includes various types of face pictures, rather than just close-up shots. This could significantly improve the generalization of the model on different face inputs.<br />
@@ -18,7 +18,7 @@
         <h2>Explanations</h2>
         <p>
             This demonstration aims to showcase the results of the technical choices I made on the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces</a> Kaggle's dataset and the generalization capabilities of the methods used.<br />
-            For example <b class="term">the <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a> loss is a great solution against bad learning strategies</b>, enforcing a focus on the segmented part instead of falling into a white pixel only strategy.<br />
+            <b class="term">The <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a> loss is a great solution against bad learning strategies</b>, enforcing a focus on the segmented part instead of falling into a white pixel only strategy.<br />
             Applying this loss function to higher quality datasets could enable the model to achieve even better results.<br />
             <br />
         </p>
