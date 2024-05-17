@@ -12,12 +12,13 @@
             In order to train the model, I created a train set of 800 images and a validation set of 200 images. I also created a test set of 1000 images to evaluate the model's performance.<br />
             Next, <b class="term">I used <a href="https://pypi.org/project/mediapipe/">Mediapipe</a> to approximate eye positions by applying mesh on the faces. This enabled me to create masks for the pictures used in the training and testing processes</b>.<br />
             Although the test set results are excellent, we could improve generalization by utilizing a dataset with more diversity. I recommend using a dataset that includes various types of face pictures, rather than just close-up shots.<br />
-            This could significantly improve the generalization of the model on different face inputs. The current model doesn't generalize well to all types of face pictures because of the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces</a> dataset's limitations.<br />
+            This could significantly improve the generalization of the model on different face inputs. The current model doesn't generalize well to different types of face pictures because of the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces</a> dataset's limitations.<br />
         </p>
 
         <h2>Explanations</h2>
         <p>
-            <b class="term">This demonstration aims to showcase the results of the choices I made on the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces</a> Kaggle's dataset and their generalization capabilities</b>.<br />
+            <b class="term">This demonstration aims to showcase the results of the choices I made on the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces</a> Kaggle's dataset and their generalization capabilities</b>.
+            <br />
             <b class="term">To ensure a robust learning strategy for the model, I implemented a <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a> loss. This approach effectively counters poor strategies, such as predicting only white pixels, by focusing solely on the segmented pixels of the image for the learning process</b>.<br />
             <b class="term">Applying this loss function to higher quality datasets could enable the model to achieve even better results</b>.<br />
             <br />
