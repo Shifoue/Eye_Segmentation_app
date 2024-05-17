@@ -18,7 +18,7 @@
         <h2>Explanations</h2>
         <p>
             This demonstration aims to showcase the results of the technical choices I made on the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces</a> Kaggle's dataset and the generalization capabilities of the methods used.<br />
-            <b class="term">The <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a> loss is a great solution against bad learning strategies</b>, enforcing a focus on the segmented part instead of falling into a white pixel only strategy.<br />
+            <b class="term">To enforce a proper learning strategy for the model I chose to implement a <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a> loss, as it effectively counters poor learning strategies such as white pixel only prediction by focus on the segmented part of the image only</b>.<br />
             Applying this loss function to higher quality datasets could enable the model to achieve even better results.<br />
             <br />
         </p>
