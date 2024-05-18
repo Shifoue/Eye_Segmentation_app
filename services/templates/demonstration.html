@@ -8,7 +8,8 @@
         <p>
             <b class="term">This demonstration serves as a proof of concept for Eye Segmentation. It aims to showcase the outcomes of my choices and their ability to generalize.</b><br />
             <body>
-                <img src="/services/images/Seg_example.jpg" title="Segmentation example">
+                <!-- <img src="static/services/images/Seg_example.jpg" title="Segmentation example"> -->
+                <img src="{{ url_for('static', filename='images/Seg_example.jpg') }}">
             </body>
             <br />
             <b class="term">The model was trained on the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces</a> Kaggle's dataset and achieved 89,5% <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a> on the test set</b>.<br />
