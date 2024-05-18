@@ -18,7 +18,7 @@
             <b class="term">To ensure a robust learning strategy for the model, I implemented a <a href="https://fr.wikipedia.org/wiki/Indice_de_S%C3%B8rensen-Dice">Dice Score</a> loss. This approach effectively counters poor strategies, such as predicting only white pixels, by focusing solely on the segmented pixels of the image for the learning process</b>.<br />
             <b class="term">Applying this loss function to higher quality datasets could enable the model to achieve even better results</b>.<br />
             <br />
-            <b class="term">Although the test set results are excellent, we could improve generalization by utilizing a dataset with more diversity</b>. I recommend using a dataset that includes various types of face pictures, rather than just close-up shots.<br />
+            <b class="term">Although the test set results are excellent, we could improve generalization by utilizing a dataset with more diversity. I recommend using a dataset that includes various types of face pictures, rather than just close-up shots</b>.<br />
             This could significantly improve the generalization of the model on different face inputs. The current model doesn't generalize well to different types of face pictures because of the <a href="https://www.kaggle.com/datasets/jessicali9530/celeba-dataset">CelebFaces</a> dataset's limitations.<br />
             <b class="term"></b>Furthermore, applying this loss function to higher quality datasets could enable the model to achieve even better results</b>.<br />
         </p>
@@ -42,10 +42,10 @@
         </form>
 
         <body>
-            <center>
-                <img src="data:image/jpg;base64,{{ origin_image_data }}" onerror="this.style.display='none'">
-                <img src="data:image/jpg;base64,{{ mask_data }}" onerror="this.style.display='none'">
-                <img src="data:image/jpg;base64,{{ masked_image_data }}" onerror="this.style.display='none'">
-            </center>
+            <!-- <center> -->
+            <img src="data:image/jpg;base64,{{ origin_image_data }}" onerror="this.style.display='none'">
+            <img src="data:image/jpg;base64,{{ mask_data }}" onerror="this.style.display='none'">
+            <img src="data:image/jpg;base64,{{ masked_image_data }}" onerror="this.style.display='none'">
+            <!-- </center> -->
         </body>
 </html>
