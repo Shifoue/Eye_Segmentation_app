@@ -90,6 +90,7 @@ a:visited{
 		letter-spacing: 0.0225em;
 		width: auto;
 		margin: 0;
+		text-decoration: none;
 	}
 	p {
 		color: #555;
@@ -99,6 +100,7 @@ a:visited{
 		line-height: 1.25;
 		text-overflow: ellipsis;
 		overflow: hidden;
+		text-decoration: none;
 	}
 	a {
 		color: #378AEE;
