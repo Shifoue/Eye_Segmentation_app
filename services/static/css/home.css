@@ -16,18 +16,23 @@ a:visited{
 	color: inherit;
 }
 
-nav {
+/* nav {
+	text-align: center;
+} */
+
+nav ul {
 	text-align: center;
 }
 
 nav a {
 	text-decoration: none;
 	/* width: 450px;  */
-	padding: 0 30px; /* variable width */
+	/* padding: 0 30px; variable width */
 }
 
 nav li {
    display: inline-block;
+   margin-right: 10px
 }
 
 .bg {
