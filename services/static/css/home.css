@@ -50,7 +50,7 @@ nav ul li {
 	height: 100vh;
 }
 
-title {
+.title {
 	color: rgba(#fff, 0.85);
 	font-family: 'Raleway','Lato','Helvetica Neue', Arial, sans-serif;
 	font-size: 8vw;
@@ -112,7 +112,7 @@ title {
 	top: 60%;
 	box-shadow: 0 -2px 12px rgba(#000, 0.3);
 	padding: 10px 12px;
-	overflow: auto;
+	overflow: hidden;
 	transition: all 450ms ease-in-out 0s;
 	cursor: pointer;
 	text-align: left ;
