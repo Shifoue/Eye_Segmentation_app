@@ -17,8 +17,13 @@ a:visited{
 }
 
 nav {
-	text-align: center;
+	/* text-align: center; */
+	justify-content: center
 }
+
+/* ul {
+	justify-content: center
+} */
 
 nav li {
    display: inline-block;
@@ -53,6 +58,7 @@ nav li {
 	transition: all 450ms ease-out 0s;
 	overflow: hidden;
 	text-decoration: none;
+	padding: 9px 18px 9px;
 	.blog-img {
 		position: absolute;
 		min-width: 100%;
@@ -91,7 +97,7 @@ nav li {
 	top: 60%;
 	box-shadow: 0 -2px 12px rgba(#000, 0.3);
 	padding: 10px 12px;
-	overflow: hidden;
+	overflow: auto;
 	transition: all 450ms ease-in-out 0s;
 	cursor: pointer;
 	h2 {
