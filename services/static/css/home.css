@@ -7,12 +7,12 @@
 }
 
 a{
-	text-decoration: none;
+	text-decoration: inherit;
 	color: inherit;
 }
 	
 a:visited{
-	text-decoration: none;
+	text-decoration: inherit;
 	color: inherit;
 }
 
