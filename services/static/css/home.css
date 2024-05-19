@@ -24,7 +24,7 @@ nav li {
 	display: inline-block;
 } */
 
-nav:first-of-type {
+/* nav:first-of-type {
 	float: left;
 }
 
@@ -34,8 +34,8 @@ nav:last-of-type {
 
 nav:first-of-type ul {
 	float: left;
-	padding-left: 20px;
-}
+	padding-left: 0;
+} */
 
 nav li {
    display: inline-block;
