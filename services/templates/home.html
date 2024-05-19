@@ -2,20 +2,41 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="services/static/css/style.css">
     </head>
 
-    <body>
-        <main>
-            <h1>Welcome to my Eye Segmentation Web app</h1>
-            <p>
-                You can navigate the project through the following categories :
-            </p>
-            <nav class="menu">
-                <ul>
-                  <li><a  href="{{ url_for('demonstration')}}" class="right">Demonstration</a></li>
-                  <li><a  href="{{ url_for('technical_explanation')}}" class="right">Technical Explanations</a></li>
-                </ul>
-            </nav>
-        </main>
-    </body>
+    <section class="bg"></section>
+        <body>
+            <main>
+                <h1 class="title">Welcome to my Eye Segmentation Web app</h1>
+                <p>
+                    You can navigate the project through the following categories :
+                </p>
+                <!-- <nav class="menu">
+                    <ul>
+                    <li><a  href="{{ url_for('demonstration')}}" class="right">Demonstration</a></li>
+                    <li><a  href="{{ url_for('technical_explanation')}}" class="right">Technical Explanations</a></li>
+                    </ul>
+                </nav> -->
+                <a href="{{ url_for('demonstration')}}">
+                    <div class="blog-card">
+                        <!-- <img class="blog-img" src="https://user-images.githubusercontent.com/16360374/37567282-e1932872-2a81-11e8-807b-efc5a997f2f1.jpg" /> -->
+                        <div class="text-overlay">
+                            <h2>Demonstration</h2>
+                            <p>Quick demonstration of the model results...</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="{{ url_for('technical_explanation')}}">
+                    <div class="blog-card">
+                        <!-- <img class="blog-img" src="https://user-images.githubusercontent.com/16360374/37567282-e1932872-2a81-11e8-807b-efc5a997f2f1.jpg" /> -->
+                        <div class="text-overlay">
+                            <h2>Technical Explanations</h2>
+                            <p>Detailed explanations about the technical part of the project...</p>
+                        </div>
+                    </div>
+                </a>
+            </main>
+        </body>
+    </section>
 </html>
