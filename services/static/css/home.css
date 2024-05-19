@@ -21,8 +21,13 @@ a:visited{
 } */
 
 nav ul {
-	text-align: center;
+    width: 100%;
+    margin: auto;
 }
+
+/* nav ul {
+	text-align: center;
+} */
 
 nav a {
 	text-decoration: none;
