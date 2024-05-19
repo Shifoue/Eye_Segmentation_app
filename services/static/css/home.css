@@ -16,26 +16,9 @@ a:visited{
 	color: inherit;
 }
 
-/* nav {
-	display: inline-block;
+nav {
+	text-align: center;
 }
-
-nav li {
-	display: inline-block;
-} */
-
-/* nav:first-of-type {
-	float: left;
-}
-
-nav:last-of-type {
-	float: right;
-}
-
-nav:first-of-type ul {
-	float: left;
-	padding-left: 0;
-} */
 
 nav li {
    display: inline-block;
