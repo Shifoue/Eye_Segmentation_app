@@ -16,12 +16,14 @@ a:visited{
 	color: inherit;
 }
 
-/* nav {
+nav {
 	text-align: center;
-} */
+}
 
-ul {
-	justify-content: center
+nav a {
+	text-decoration: none;
+	/* width: 450px;  */
+	padding: 0 30px; /* variable width */
 }
 
 nav li {
