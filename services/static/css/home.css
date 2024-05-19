@@ -16,14 +16,13 @@ a:visited{
 	color: inherit;
 }
 
-nav {
-	/* text-align: center; */
+/* nav {
+	text-align: center;
+} */
+
+ul {
 	justify-content: center
 }
-
-/* ul {
-	justify-content: center
-} */
 
 nav li {
    display: inline-block;
