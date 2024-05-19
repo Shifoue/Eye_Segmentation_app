@@ -16,32 +16,20 @@ a:visited{
 	color: inherit;
 }
 
-/* nav {
-	text-align: center;
-} */
-
 nav ul {
 	display: block; 
-  	/* width: 1200px; */
   	margin: auto;
   	text-align: center;
-	/* display: inline-block; */
 }
-
-/* nav ul {
-	text-align: center;
-} */
 
 nav a {
 	text-decoration: none;
-	/* width: 450px;  */
-	/* padding: 0 30px; variable width */
 }
 
 nav ul li {
    display: inline-block;
    margin-right: 50px ;
-   text-align: left ;
+   /* text-align: left ; */
 }
 
 .bg {
@@ -121,7 +109,6 @@ nav ul li {
 		letter-spacing: 0.0225em;
 		width: auto;
 		margin: 0;
-		/* text-decoration: none; */
 	}
 	p {
 		color: #555;
@@ -131,7 +118,6 @@ nav ul li {
 		line-height: 1.25;
 		text-overflow: ellipsis;
 		overflow: hidden;
-		/* text-decoration: none; */
 	}
 	a {
 		color: #378AEE;
