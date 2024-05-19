@@ -19,15 +19,16 @@
             <li><a  href="{{ url_for('technical_explanation')}}" class="right">Technical Explanations</a></li>
             </ul>
         </nav> -->
-        <a href="{{ url_for('demonstration')}}">
+        <!-- <a href="{{ url_for('demonstration')}}"> -->
             <div class="blog-card">
+                <a href="{{ url_for('demonstration')}}"></a>
                 <img class="blog-img" src="{{ url_for('static', filename='images/eye_seg_icon.jpg') }}" />
                 <div class="text-overlay">
                     <h2>Demonstration</h2>
                     <p>Quick demonstration of the model results...</p>
                 </div>
             </div>
-        </a>
+        <!-- </a> -->
         <a href="{{ url_for('technical_explanation')}}">
             <div class="blog-card">
                 <div class="text-overlay">
