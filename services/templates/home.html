@@ -19,7 +19,7 @@
                     <li><a  href="{{ url_for('technical_explanation')}}" class="right">Technical Explanations</a></li>
                     </ul>
                 </nav> -->
-                <!-- <a href="{{ url_for('demonstration')}}"> -->
+                <a href="{{ url_for('demonstration')}}">
                     <div class="blog-card">
                         <a href="{{ url_for('demonstration')}}"></a>
                             <img class="blog-img" src="{{ url_for('static', filename='images/eye_seg_icon.jpg') }}" />
@@ -28,24 +28,16 @@
                                 <p>Quick demonstration of the model results...</p>
                             </div>
                         </a>
-
-                        <a href="{{ url_for('technical_explanation')}}"></a>
-                            <img class="blog-img" src="{{ url_for('static', filename='images/eye_seg_icon.jpg') }}" />
-                            <div class="text-overlay">
-                                <h2>Technical Explanations</h2>
-                                <p>Detailed explanations about the technical part of the project...</p>
-                            </div>
-                        </a>
                     </div>
-                <!-- </a> -->
-                <!-- <a href="{{ url_for('technical_explanation')}}">
+                </a>
+                <a href="{{ url_for('technical_explanation')}}">
                     <div class="blog-card">
                         <div class="text-overlay">
                             <h2>Technical Explanations</h2>
                             <p>Detailed explanations about the technical part of the project...</p>
                         </div>
                     </div>
-                </a> -->
+                </a>
             </main>
         </body>
     </section>
