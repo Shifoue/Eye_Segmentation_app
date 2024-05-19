@@ -115,6 +115,7 @@ nav ul li {
 	overflow: auto;
 	transition: all 450ms ease-in-out 0s;
 	cursor: pointer;
+	text-align: left ;
 	h2 {
 		color: rgba(#4435cf, 0.85);
 		letter-spacing: 0.0225em;
