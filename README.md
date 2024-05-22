@@ -31,3 +31,11 @@ sudo chmod 666 /var/run/docker.sock
 ```
 
 The model works well on identity photos but doesn't generalize well to other face photo types.
+
+## Docker clean up
+
+```
+docker system prune -a --volumes
+
+docker volume prune -a
+```
