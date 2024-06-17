@@ -1,7 +1,7 @@
 services:
   application:
-    env_file: "services/app.env"
-    
+    #env_file: "services/app.env"
+
     restart: always
 
     build:

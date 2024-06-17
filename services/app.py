@@ -14,6 +14,8 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 HOST="0.0.0.0"
 PORT=5000
 
+app = Flask(__name__)
+
 def base64_image_encoder(image, extension="JPEG"):
     buffered = io.BytesIO()
     image.save(buffered, format=extension)
@@ -32,8 +34,6 @@ def allowed_file(filename):
  
 if __name__ == '__main__':
     AI = AI_process()
-
-    app = Flask(__name__)
 
     @app.route('/')
     def index():
