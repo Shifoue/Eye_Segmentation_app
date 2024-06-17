@@ -14,10 +14,6 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 HOST="0.0.0.0"
 PORT=5000
 
-AI = AI_process()
-
-app = Flask(__name__)
-
 def base64_image_encoder(image, extension="JPEG"):
     buffered = io.BytesIO()
     image.save(buffered, format=extension)
@@ -75,4 +71,7 @@ def demonstration():
     return render_template("demonstration.html")
  
 if __name__ == '__main__':
+    AI = AI_process()
+
+    app = Flask(__name__)
     app.run(HOST, port=PORT, ssl_context="adhoc")

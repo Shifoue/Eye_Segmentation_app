@@ -1,6 +1,6 @@
 services:
   application:
-    #restart: always
+    restart: always
 
     build:
       context: .
