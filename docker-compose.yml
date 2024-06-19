@@ -19,19 +19,20 @@
 services:
   api:
     build:
-      context: ./services
-      dockerfile: Dockerfile
-      command: gunicorn app:app --bind 0.0.0.0:5000
+      context: .
+      dockerfile: services/Dockerfile
+      # command: gunicorn app:app -p eye_seg_app.pid -b 0.0.0.0:5000 -D
     volumes:
       - "/services/"
     #   - static_volume:/store/staticfiles/
     #   - media_volume:/store/mediafiles/
     expose:
       - 80
+
   nginx:
     build:
-      context: ./services/etc/nginx
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: /services/etc/nginx/Dockerfile
     ports:
       - 443:80
     # volumes:
