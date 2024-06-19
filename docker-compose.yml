@@ -2,7 +2,7 @@ services:
   application:
     #env_file: "services/app.env"
 
-    restart: always
+    #restart: always
 
     build:
       context: .
