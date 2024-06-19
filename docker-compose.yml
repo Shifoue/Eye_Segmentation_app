@@ -15,10 +15,11 @@
 #       - "443:5000"
 
 version: '3'
+
 services:
   api:
     build:
-      context: .
+      context: ./services
       dockerfile: Dockerfile
       command: gunicorn app:app --bind 0.0.0.0:5000
     volumes:
