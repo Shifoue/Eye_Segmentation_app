@@ -30,5 +30,5 @@ RUN ln -s /services/etc/nginx/sites-available/eye-segmentation-app.com /services
 EXPOSE 5000
 
 # CMD ["flask", "run", "--host=0.0.0.0", "--cert=adhoc"]
-CMD ["gunicorn", "app:app", "-p eye_seg_app.pid", "-b 127.0.0.1:5000", "-D"]
+CMD ["gunicorn", "app:app", "-p", "eye_seg_app.pid", "-b", "0.0.0.0:5000", "-D"]
 # CMD ["gunicorn", "app:app", "-p eye_seg_app.pid", "-D"]
