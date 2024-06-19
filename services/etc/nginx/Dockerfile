@@ -1,5 +1,6 @@
 FROM nginx:latest
 
+RUN apt-get update
 # Debug
 RUN apt install curl -y
 RUN apt install vim -y
