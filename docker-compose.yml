@@ -17,7 +17,7 @@
 # version: '3'
 
 services:
-  api:
+  web_app:
     build:
       context: .
       dockerfile: services/Dockerfile
@@ -27,14 +27,14 @@ services:
     #   - static_volume:/store/staticfiles/
     #   - media_volume:/store/mediafiles/
     expose:
-      - 443
+      - 5000
 
   nginx:
     build:
       context: .
       dockerfile: services/etc/nginx/Dockerfile
     ports:
-      - 443:443
+      - "443:80"
     volumes:
       - "/nginx/"
     #   - static_volume:/store/staticfiles/
