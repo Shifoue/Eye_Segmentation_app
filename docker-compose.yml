@@ -1,15 +1,41 @@
+# services:
+#   application:
+#     #env_file: "services/app.env"
+
+#     #restart: always
+
+#     build:
+#       context: .
+#       dockerfile: services/Dockerfile
+
+#     volumes:
+#       - "/services/"
+
+#     ports:
+#       - "443:5000"
+
+version: '3'
 services:
-  application:
-    #env_file: "services/app.env"
-
-    #restart: always
-
+  api:
     build:
       context: .
-      dockerfile: services/Dockerfile
-
+      dockerfile: Dockerfile
+      command: gunicorn app:app --bind 0.0.0.0:5000
     volumes:
       - "/services/"
-
+    #   - static_volume:/store/staticfiles/
+    #   - media_volume:/store/mediafiles/
+    expose:
+      - 80
+  nginx:
+    build:
+      context: ./services/etc/nginx
+      dockerfile: Dockerfile
     ports:
-      - "443:5000"
+      - 443:80
+    # volumes:
+    #   - static_volume:/store/staticfiles/
+    #   - media_volume:/store/mediafiles/
+# volumes:
+#   static_volume:
+#   media_volume:

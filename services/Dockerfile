@@ -23,12 +23,16 @@ RUN apt install zlib1g-dev libjpeg-dev libpng-dev -y
 
 RUN pip install -r requirements.txt
 
-RUN mkdir /services/etc/nginx/sites-enabled
+# RUN mkdir /services/etc/nginx/sites-enabled
 
-RUN ln -s /services/etc/nginx/sites-available/eye-segmentation-app.com /services/etc/nginx/sites-enabled/eye-segmentation-app.com
+# RUN ln -s /services/etc/nginx/sites-available/eye-segmentation-app.com /services/etc/nginx/sites-enabled/eye-segmentation-app.com
 
 EXPOSE 5000
 
 # CMD ["flask", "run", "--host=0.0.0.0", "--cert=adhoc"]
-CMD ["gunicorn", "app:app", "-p", "eye_seg_app.pid", "-b", "0.0.0.0:5000", "-D"]
-# CMD ["gunicorn", "app:app", "-p eye_seg_app.pid", "-D"]
+
+# gunicorn app:app -p eye_seg_app.pid -b 0.0.0.0:5000 -D -c /services/app.py
+# CMD ["gunicorn", "app:app", "-p", "eye_seg_app.pid", "-b", "0.0.0.0:5000", "-D", "-c", "/services/app.py"]
+
+# gunicorn app:app -p eye_seg_app.pid -b 0.0.0.0:5000 -c /services/app.py
+# CMD ["gunicorn", "app:app", "-p", "eye_seg_app.pid", "-b", "0.0.0.0:5000", "-c", "/services/app.py"]
