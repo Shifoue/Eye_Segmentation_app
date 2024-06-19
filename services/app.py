@@ -6,7 +6,7 @@ from base64 import b64encode
 from flask import Flask, flash, request, redirect, url_for
 from flask import render_template
 from werkzeug.utils import secure_filename
-from werkzeug.contrib.fixers import ProxyFix
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 from backend.AI import AI_process
 
@@ -19,7 +19,8 @@ PORT=5000
 AI = AI_process()
 
 app = Flask(__name__)
-app.wsgi_app = ProxyFix(app.wsgi_app)
+#app.wsgi_app = ProxyFix(app.wsgi_app)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 
 def base64_image_encoder(image, extension="JPEG"):
     buffered = io.BytesIO()
