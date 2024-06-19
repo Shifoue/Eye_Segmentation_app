@@ -23,7 +23,10 @@ RUN apt install zlib1g-dev libjpeg-dev libpng-dev -y
 
 RUN pip install -r requirements.txt
 
+RUN ln -s /etc/nginx/sites-available/exploreflask.com /etc/nginx/sites-enabled/exploreflask.com
+
 EXPOSE 5000
 
 # CMD ["flask", "run", "--host=0.0.0.0", "--cert=adhoc"]
-CMD ["gunicorn", "app:app", "-p rocket.pid", "-b 0.0.0.0:5000", "-D"]
+# CMD ["gunicorn", "app:app", "-p eye_seg_app.pid", "-b 127.0.0.1:5000", "-D"]
+CMD ["gunicorn", "app:app", "-p eye_seg_app.pid", "-D"]

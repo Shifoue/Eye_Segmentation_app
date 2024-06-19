@@ -12,7 +12,8 @@ from backend.AI import AI_process
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
-HOST="0.0.0.0"
+#HOST="0.0.0.0"
+HOST="127.0.0.1"
 PORT=5000
 
 AI = AI_process()
