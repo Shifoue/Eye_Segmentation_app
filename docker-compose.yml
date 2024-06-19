@@ -14,7 +14,7 @@
 #     ports:
 #       - "443:5000"
 
-version: '3'
+# version: '3'
 
 services:
   api:
