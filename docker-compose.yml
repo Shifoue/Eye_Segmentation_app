@@ -26,21 +26,21 @@ services:
     #   - "/api/"
     #   - static_volume:/store/staticfiles/
     #   - media_volume:/store/mediafiles/
-    ports:
-      - "443:5000"
-#     expose:
-#       - 5000
+    # ports:
+    #   - "443:5000"
+    expose:
+     - 5000
 
-#   nginx:
-#     build:
-#       context: .
-#       dockerfile: services/etc/nginx/Dockerfile
-#     ports:
-#       - "443:80"
-#     # volumes:
-#     #   - "/nginx/"
-#     #   - static_volume:/store/staticfiles/
-#     #   - media_volume:/store/mediafiles/
-# # volumes:
-# #   static_volume:
-# #   media_volume:
+  nginx:
+    build:
+      context: .
+      dockerfile: services/etc/nginx/Dockerfile
+    ports:
+      - "443:80"
+    # volumes:
+    #   - "/nginx/"
+    #   - static_volume:/store/staticfiles/
+    #   - media_volume:/store/mediafiles/
+# volumes:
+#   static_volume:
+#   media_volume:
