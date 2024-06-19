@@ -23,7 +23,7 @@ RUN apt install zlib1g-dev libjpeg-dev libpng-dev -y
 
 RUN pip install -r requirements.txt
 
-RUN ln -s /etc/nginx/sites-available/eye-segmentation-app.com /etc/nginx/sites-enabled/eye-segmentation-app.com
+RUN ln -s /services/etc/nginx/sites-available/eye-segmentation-app.com /services/etc/nginx/sites-enabled/eye-segmentation-app.com
 
 EXPOSE 5000
 
