@@ -32,7 +32,7 @@ services:
   nginx:
     build:
       context: .
-      dockerfile: /services/etc/nginx/Dockerfile
+      dockerfile: services/etc/nginx/Dockerfile
     ports:
       - 443:80
     # volumes:
