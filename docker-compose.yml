@@ -38,7 +38,7 @@ services:
     ports:
       - "443:80"
     volumes:
-      - /services/etc/nginx/sites-available:/etc/nginx/conf.d
+      - /services/etc/nginx/default.conf:/etc/nginx/conf.d/default.conf
     #   - /services/etc/nginx/sites-available/:/etc/nginx/sites-available/
     #   - "/nginx/"
     #   - static_volume:/store/staticfiles/
