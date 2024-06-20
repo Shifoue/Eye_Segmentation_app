@@ -11,7 +11,7 @@ RUN apt install systemd -y
 
 #Needed
 RUN apt install nginx -y
-RUN apt install -y
+RUN apt install ufw -y
 
 
 RUN ufw allow 'Nginx Full'
