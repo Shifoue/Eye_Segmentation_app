@@ -1,5 +1,5 @@
 # FROM nginx:latest
-FROM scratch
+FROM ubuntu:22.04
 
 # WORKDIR /etc/nginx
 
