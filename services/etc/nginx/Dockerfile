@@ -1,4 +1,4 @@
-FROM nginx:latest
+# FROM nginx:latest
 
 # WORKDIR /etc/nginx
 
@@ -9,38 +9,44 @@ RUN apt install vim -y
 RUN apt install systemd -y
 
 #Needed
-RUN apt-get install python3.10 -y
-RUN apt install python3-pip -y
-# RUN pip install -U pip
+RUN apt install nginx
+RUN ufw allow 'Nginx Full'
 
-RUN apt-get install python3-openssl -y
+# RUN apt-get install python3.10 -y
+# RUN apt install python3-pip -y
+# RUN snap install core
+# RUN snap refresh core
+# RUN snap install --classic certbot
+# # RUN pip install -U pip
 
-# RUN pip install pyOpenSSL
+# RUN apt-get install python3-openssl -y
 
-# Remove any existing config files
-# RUN rm /etc/nginx/conf.d/*
-RUN rm /etc/nginx/nginx.conf
+# # RUN pip install pyOpenSSL
 
-# RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/selfsigned.key -out /etc/ssl/certs/selfsigned.crt
+# # Remove any existing config files
+# # RUN rm /etc/nginx/conf.d/*
+# RUN rm /etc/nginx/nginx.conf
 
-# RUN rm -f /etc/nginx/sites-enabled/default
-# RUN unlink /etc/nginx/sites-enabled/default
-# Copy the custom Nginx configuration
-COPY /services/etc/nginx/nginx.conf /etc/nginx/
+# # RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/selfsigned.key -out /etc/ssl/certs/selfsigned.crt
 
-# Certificates
+# # RUN rm -f /etc/nginx/sites-enabled/default
+# # RUN unlink /etc/nginx/sites-enabled/default
+# # Copy the custom Nginx configuration
+# COPY /services/etc/nginx/nginx.conf /etc/nginx/
 
-COPY /services/etc/nginx/certificate/selfsigned.key /etc/ssl/private/
-COPY /services/etc/nginx/certificate/selfsigned.crt /etc/ssl/certs/
+# # Certificates
+
+# COPY /services/etc/nginx/certificate/selfsigned.key /etc/ssl/private/
+# COPY /services/etc/nginx/certificate/selfsigned.crt /etc/ssl/certs/
 
 
 
-COPY /services/etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-available/reverse-proxy.conf
+# COPY /services/etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-available/reverse-proxy.conf
 
-RUN mkdir etc/nginx/sites-enabled
-RUN ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/
+# RUN mkdir etc/nginx/sites-enabled
+# RUN ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/
 
-RUN systemctl restart nginx
+# RUN systemctl restart nginx
 
 # Expose port 80 for Nginx
-EXPOSE 80 443
+EXPOSE 80
