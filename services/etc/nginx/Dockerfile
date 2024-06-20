@@ -12,7 +12,7 @@ RUN apt-get install python3.10 -y
 RUN apt install python3-pip -y
 # RUN pip install -U pip
 
-RUN apt-get install python3-openssl
+RUN apt-get install python3-openssl -y
 
 # RUN pip install pyOpenSSL
 
