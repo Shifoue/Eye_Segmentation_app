@@ -1,4 +1,5 @@
 # FROM nginx:latest
+FROM scratch
 
 # WORKDIR /etc/nginx
 
