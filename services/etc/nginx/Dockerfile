@@ -31,7 +31,7 @@ RUN apt-get install python3-openssl -y
 
 # Remove any existing config files
 # RUN rm /etc/nginx/conf.d/*
-RUN rm /etc/nginx/nginx.conf
+# RUN rm /etc/nginx/nginx.conf
 
 # RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/selfsigned.key -out /etc/ssl/certs/selfsigned.crt
 
@@ -39,7 +39,8 @@ RUN rm /etc/nginx/nginx.conf
 # RUN unlink /etc/nginx/sites-enabled/default
 
 # Copy the custom Nginx configuration
-# COPY /services/etc/nginx/nginx.conf /etc/nginx/
+COPY /services/etc/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY /services/etc/nginx/default.conf /etc/nginx/conf.d/default.conf
 
 # Certificates
 
