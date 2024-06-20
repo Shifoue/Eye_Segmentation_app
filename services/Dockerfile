@@ -23,10 +23,6 @@ RUN apt install zlib1g-dev libjpeg-dev libpng-dev -y
 
 RUN pip install -r requirements.txt
 
-# RUN mkdir /services/etc/nginx/sites-enabled
-
-# RUN ln -s /services/etc/nginx/sites-available/eye-segmentation-app.com /services/etc/nginx/sites-enabled/eye-segmentation-app.com
-
 EXPOSE 5000
 
 # CMD ["flask", "run", "--host=0.0.0.0", "--cert=adhoc"]

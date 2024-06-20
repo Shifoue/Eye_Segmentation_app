@@ -1,5 +1,5 @@
-FROM nginx:latest
-# FROM ubuntu:22.04
+# FROM nginx:latest
+FROM ubuntu:22.04
 
 # WORKDIR /etc/nginx
 
@@ -10,7 +10,7 @@ RUN apt install vim -y
 RUN apt install systemd -y
 
 #Needed
-# RUN apt install nginx -y
+RUN apt install nginx -y
 # RUN apt install ufw -y
 
 
@@ -39,19 +39,21 @@ RUN apt-get install python3-openssl -y
 # RUN unlink /etc/nginx/sites-enabled/default
 
 # Copy the custom Nginx configuration
-COPY /services/etc/nginx/nginx.conf /etc/nginx/nginx.conf
-
-# Certificates
-
-COPY /services/etc/nginx/certificate/selfsigned.key /etc/ssl/private/
-COPY /services/etc/nginx/certificate/selfsigned.crt /etc/ssl/certs/
 
 
+# COPY /services/etc/nginx/nginx.conf /etc/nginx/nginx.conf
 
-COPY /services/etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-available/reverse-proxy.conf
+# # Certificates
 
-RUN mkdir etc/nginx/sites-enabled
-RUN ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/
+# COPY /services/etc/nginx/certificate/selfsigned.key /etc/ssl/private/
+# COPY /services/etc/nginx/certificate/selfsigned.crt /etc/ssl/certs/
+
+
+
+# COPY /services/etc/nginx/sites-available/eye-segmentation-app.com.conf /etc/nginx/sites-available/eye-segmentation-app.com.conf
+
+# RUN mkdir etc/nginx/sites-enabled
+# RUN ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/
 
 # Expose port 80 for Nginx
 EXPOSE 80 443
