@@ -11,6 +11,9 @@ RUN apt install systemd -y
 
 #Needed
 RUN apt install nginx -y
+RUN apt install -y
+
+
 RUN ufw allow 'Nginx Full'
 
 # RUN apt-get install python3.10 -y
