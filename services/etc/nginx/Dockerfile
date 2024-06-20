@@ -6,7 +6,7 @@ RUN apt-get update
 # Debug
 RUN apt install curl -y
 RUN apt install vim -y
-RUN apt install systemd
+RUN apt install systemd -y
 
 #Needed
 RUN apt-get install python3.10 -y
