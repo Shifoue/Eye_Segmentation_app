@@ -25,10 +25,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
-# CMD ["flask", "run", "--host=0.0.0.0", "--cert=adhoc"]
-
-# gunicorn app:app -p eye_seg_app.pid -b 0.0.0.0:5000 -D -c /services/app.py
-# CMD ["gunicorn", "app:app", "-p", "eye_seg_app.pid", "-b", "0.0.0.0:5000", "-D", "-c", "/services/app.py"]
-
-# gunicorn app:app -p eye_seg_app.pid -b 0.0.0.0:5000 -c /services/app.py
 CMD ["gunicorn", "app:app", "-p", "eye_seg_app.pid", "-b", "0.0.0.0:5000", "-c", "/services/app.py"]
