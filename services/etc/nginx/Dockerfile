@@ -27,7 +27,7 @@ RUN rm /etc/nginx/nginx.conf
 COPY /services/etc/nginx/nginx.conf /etc/nginx
 
 COPY /services/etc/nginx/certificate/selfsigned.key /etc/ssl/private/
-COPY /services/etc/nginx/certificate/selfsigned.cert /etc/ssl/certs/
+COPY /services/etc/nginx/certificate/selfsigned.crt /etc/ssl/certs/
 
 COPY /services/etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-available/reverse-proxy.conf
 
