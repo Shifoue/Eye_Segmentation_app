@@ -40,5 +40,7 @@ COPY /services/etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-ava
 RUN mkdir etc/nginx/sites-enabled
 RUN ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/
 
+RUN systemctl restart nginx
+
 # Expose port 80 for Nginx
-EXPOSE 80
+EXPOSE 80 443
