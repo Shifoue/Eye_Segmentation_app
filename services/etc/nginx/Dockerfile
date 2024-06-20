@@ -39,8 +39,7 @@ RUN apt-get install python3-openssl -y
 # RUN unlink /etc/nginx/sites-enabled/default
 
 # Copy the custom Nginx configuration
-COPY /services/etc/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY /services/etc/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY /services/etc/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 # Certificates
 
@@ -49,10 +48,10 @@ COPY /services/etc/nginx/certificate/selfsigned.crt /etc/ssl/certs/
 
 
 
-# COPY /services/etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-available/reverse-proxy.conf
+COPY /services/etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-available/reverse-proxy.conf
 
-# RUN mkdir etc/nginx/sites-enabled
-# RUN ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/
+RUN mkdir etc/nginx/sites-enabled
+RUN ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/
 
 # Expose port 80 for Nginx
 EXPOSE 80
