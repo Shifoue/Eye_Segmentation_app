@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginx
 
 COPY services/etc/nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY services/etc/nginx/html/page-not-found.html /var/www/html/page-not-found.html
