@@ -6,6 +6,7 @@ RUN apt-get update
 # Debug
 RUN apt install curl -y
 RUN apt install vim -y
+RUN apt install systemd
 
 #Needed
 RUN apt-get install python3.10 -y
@@ -17,22 +18,27 @@ RUN apt-get install python3-openssl -y
 # RUN pip install pyOpenSSL
 
 # Remove any existing config files
-#RUN rm /etc/nginx/conf.d/*
+# RUN rm /etc/nginx/conf.d/*
 RUN rm /etc/nginx/nginx.conf
 
 # RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/selfsigned.key -out /etc/ssl/certs/selfsigned.crt
 
-#RUN rm -f /etc/nginx/sites-enabled/default
+# RUN rm -f /etc/nginx/sites-enabled/default
+RUN unlink /etc/nginx/sites-enabled/default
 # Copy the custom Nginx configuration
-COPY /services/etc/nginx/nginx.conf /etc/nginx
+COPY /services/etc/nginx/nginx.conf /etc/nginx/
+
+# Certificates
 
 COPY /services/etc/nginx/certificate/selfsigned.key /etc/ssl/private/
 COPY /services/etc/nginx/certificate/selfsigned.crt /etc/ssl/certs/
 
+
+
 COPY /services/etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-available/reverse-proxy.conf
 
-# # Expose port 80 for Nginx
+# RUN mkdir etc/nginx/sites-enabled
+RUN ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/reverse-proxy.conf
 
-RUN ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/
-
+# Expose port 80 for Nginx
 EXPOSE 80
