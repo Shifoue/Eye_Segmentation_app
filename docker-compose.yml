@@ -36,7 +36,8 @@ services:
       context: .
       dockerfile: services/etc/nginx/Dockerfile
     ports:
-      - "443:80"
+      - "80:80"
+      - "443:443"
     # volumes:
     #   - /services/etc/nginx/default.conf:/etc/nginx/conf.d/default.conf
     #   - /services/etc/nginx/sites-available/:/etc/nginx/sites-available/
