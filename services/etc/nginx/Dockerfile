@@ -12,7 +12,9 @@ RUN apt-get install python3.10 -y
 RUN apt install python3-pip -y
 # RUN pip install -U pip
 
-RUN pip install pyOpenSSL
+RUN apt install python3-pyOpenSSL
+
+# RUN pip install pyOpenSSL
 
 # Remove any existing config files
 #RUN rm /etc/nginx/conf.d/*
