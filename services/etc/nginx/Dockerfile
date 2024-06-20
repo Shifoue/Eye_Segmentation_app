@@ -39,7 +39,7 @@ RUN apt-get install python3-openssl -y
 # RUN unlink /etc/nginx/sites-enabled/default
 
 # Copy the custom Nginx configuration
-COPY /services/etc/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY /services/etc/nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Certificates
 
