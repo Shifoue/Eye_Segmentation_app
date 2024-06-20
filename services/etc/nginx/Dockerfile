@@ -20,9 +20,9 @@ RUN apt install systemd -y
 
 RUN apt-get install python3.10 -y
 RUN apt install python3-pip -y
-RUN snap install core
-RUN snap refresh core
-RUN snap install --classic certbot
+# RUN snap install core
+# RUN snap refresh core
+# RUN snap install --classic certbot
 # RUN pip install -U pip
 
 RUN apt-get install python3-openssl -y
