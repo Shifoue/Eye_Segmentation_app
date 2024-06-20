@@ -33,6 +33,6 @@ COPY /services/etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-ava
 
 # # Expose port 80 for Nginx
 
-RUN ln -s /services/etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/
+RUN ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/
 
 EXPOSE 80
