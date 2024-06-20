@@ -37,9 +37,9 @@ services:
       dockerfile: services/etc/nginx/Dockerfile
     ports:
       - "443:80"
-    volumes:
-      - /services/etc/nginx/:/etc/nginx/conf.d/
-      - /services/etc/nginx/sites-available/:/etc/nginx/sites-available/
+    # volumes:
+    #   - /services/etc/nginx/:/etc/nginx/conf.d/
+    #   - /services/etc/nginx/sites-available/:/etc/nginx/sites-available/
     #   - "/nginx/"
     #   - static_volume:/store/staticfiles/
     #   - media_volume:/store/mediafiles/
