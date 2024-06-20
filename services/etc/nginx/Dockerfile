@@ -16,6 +16,8 @@ RUN apt install ufw -y
 
 RUN ufw allow 'Nginx Full'
 
+CMD ["systemctl", "start", "nginx"]
+
 # RUN apt-get install python3.10 -y
 # RUN apt install python3-pip -y
 # RUN snap install core
