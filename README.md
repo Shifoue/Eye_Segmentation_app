@@ -82,3 +82,10 @@ docker images -a
 ```
 
 If you don't want to remove all docker volumes and images remove the ```-a``` option
+
+## Configuration files
+
+If you wish you can modify the following configuration files :
+  - [The proxy server configuration](https://github.com/Shifoue/Eye_Segmentation_app/blob/main/services/etc/nginx/default.conf)
+  - The reverse proxy configuration
+  - [The ssl configuration](https://github.com/Shifoue/Eye_Segmentation_app/blob/main/services/etc/nginx/includes/ssl.conf)
