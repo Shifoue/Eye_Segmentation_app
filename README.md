@@ -37,8 +37,14 @@ Clone the repository :
 git clone https://github.com/Shifoue/Eye_Segmentation_app.git
 ```
 
+If you don't have openssl here is how to install it :
+```
+sudo apt-get update
+sudo apt-get install openssl
+```
 
-Go to the root of the Eye_Segmentation_app repository and generate the self signed cerificate, if you don't have openssl you might need to install it :
+
+Go to the root of the Eye_Segmentation_app repository and generate the self signed cerificate :
 ```
 mkdir services/etc/nginx/certificate
 
