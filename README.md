@@ -30,12 +30,43 @@ sudo docker run hello-world
 sudo chmod 666 /var/run/docker.sock
 ```
 
-The model works well on identity photos but doesn't generalize well to other face photo types.
+## Setup
+
+Clone the repository :
+```
+git clone https://github.com/Shifoue/Eye_Segmentation_app.git
+```
+
+Go at the root of the  Eye_Segmentation_app repository and generate the self signed cerificate, if you don't have openssl you might need to install it :
+```
+mkdir services/etc/nginx/certificate
+
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout services/etc/nginx/certificate/selfsigned.key -out services/etc/nginx/certificate/selfsigned.crt
+```
+This certificate will be valid for 365 days. You can replace it certificate by your own, just put them inside the repository services/etc/nginx/certificate/.
+
+Now that everything is setup just run :
+```
+docker compose up -d
+```
+
+Once it is finished you can check that you have 2 containers :
+  - eye_segmenation_app-web_app which is the container containing the eye segmentation model
+  - eye_segmenation_app-nginx which is the reverse proxy.
+
+To test your server connect to https://HOST_NAME.com
 
 ## Docker clean up
 
 ```
-docker system prune -a --volumes
+docker ps
+docker stop ID
+```
+Where ID is the container ID of the container you want to stop.
 
+Then you can clean up using the following commands :
+```
+docker system prune -a --volumes
 docker volume prune -a
+docker images -a
 ```
