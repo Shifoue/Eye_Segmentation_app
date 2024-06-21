@@ -1,21 +1,3 @@
-# services:
-#   application:
-#     #env_file: "services/app.env"
-
-#     #restart: always
-
-#     build:
-#       context: .
-#       dockerfile: services/Dockerfile
-
-#     volumes:
-#       - "/services/"
-
-#     ports:
-#       - "443:5000"
-
-# version: '3'
-
 services:
   web_app:
     build:
