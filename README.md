@@ -1,6 +1,6 @@
 # Eye_Segmentation_app
 
-## Install Docker
+## Docker
 
 If you have any issue regharding docker here is a [quick setup](https://github.com/Shifoue/Eye_Segmentation_app/blob/main/Docker.md)
 
