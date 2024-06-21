@@ -36,8 +36,8 @@ docker compose up -d
 
 
 Once it is finished you can check that you have 2 containers by using the ```docker ps``` command :
-  - eye_segmenation_app-web_app which is the container containing the eye segmentation model
-  - eye_segmenation_app-nginx which is the reverse proxy.
+  - ```eye_segmenation_app-web_app``` which is the container containing the eye segmentation model
+  - ```eye_segmenation_app-nginx``` which is the reverse proxy.
 
 
 To test your server connect to https://HOST_NAME.com
