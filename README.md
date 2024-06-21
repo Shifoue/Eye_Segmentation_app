@@ -44,7 +44,7 @@ mkdir services/etc/nginx/certificate
 
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout services/etc/nginx/certificate/selfsigned.key -out services/etc/nginx/certificate/selfsigned.crt
 ```
-This certificate will be valid for 365 days. You can replace it certificate by your own, just put them inside the repository services/etc/nginx/certificate/.
+This certificate will be valid for 365 days. You can replace it by your own, just put them inside the repository services/etc/nginx/certificate/.
 
 
 Now that everything is setup just run :
