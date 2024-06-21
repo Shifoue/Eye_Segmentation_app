@@ -80,3 +80,5 @@ docker system prune -a --volumes
 docker volume prune -a
 docker images -a
 ```
+
+If you don't want to remove all docker volumes and images remove the ````-a``` option
