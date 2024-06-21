@@ -2,7 +2,7 @@
 
 ## Docker
 
-If you have any issue regharding docker here is a [quick setup](https://github.com/Shifoue/Eye_Segmentation_app/blob/main/Docker.md)
+You need to have Docker to use this repository. If you have any issue regarding docker here is a [quick setup](https://github.com/Shifoue/Eye_Segmentation_app/blob/main/Docker.md).
 
 ## Setup
 
